@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>List of Books</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body class="{{ mode }}">
+    <h1>List of Books</h1>
+    <div class="books-container">
+        {% for book in book_list %}
+        <div class="book">
+            <a href="{{ url_for('static', filename='images/books/' + book.book_id + '.pdf') }}" target="_self">
+                <img src="{{ url_for('static', filename=book.cover_image_path) }}" alt="Book Cover">
+            </a>
+        </div>       
+        {% endfor %}
+    </div>
+    <button id="toggle-mode-btn" class="toggle-button">
+        <span class="slider"></span>
+    </button>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

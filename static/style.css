@@ -1,0 +1,129 @@
+/* Common styles for both light and dark mode */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    position: relative;
+  }
+  
+  h1 {
+    margin-top: 20px;
+    text-align: center;
+  }
+  
+  /* Styles specific to light mode */
+  .light-mode {
+    background-color: #fff;
+    color: #333;
+  }
+  
+  /* Styles specific to dark mode */
+  .dark-mode {
+    background-color: #333;
+    color: #fff;
+  }
+  
+  .dark-mode h1 {
+    color: #fff;
+  }
+  
+.switch_btn {
+  background-color: #d3e8ed;
+  height: 75px;
+  width: 75px;
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translate(0, -50%);
+  border-radius: 50%;
+  transition: 0.5s linear;
+  box-shadow: #2f84c540 0px 50px 100px -20px, #1d54ba4d 0px 30px 60px -30px, #3b758441 0px -1px 3px 1px;
+}
+
+.active .switch_btn {
+  transform: translate(95px, -50%);
+  box-shadow: #2f84c540 0px 50px 100px -20px, #1d54ba4d 0px 30px 60px -30px, #3b758441 -1px -3px 3px 1px;
+}
+
+.toggle-button {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 40px;
+  border-radius: 20px;
+  background-color: #fff;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  z-index: 999;
+  transition: background-color 0.3s ease;
+}
+
+.toggle-button .slider {
+  position: relative;
+  width: 36px;
+  height: 36px;
+  background-color: #dcdcdc;
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+}
+
+.toggle-button .slider:before {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 32px;
+  height: 32px;
+  background-color: #fff;
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+}
+
+.toggle-button.active {
+  background-color: #000;
+}
+
+.toggle-button.active .slider {
+  transform: translateX(40px);
+}
+
+.toggle-button.active .slider:before {
+  transform: translateX(-32px);
+}
+
+
+.books-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 20px;
+  padding: 20px;
+}
+  
+.book {
+  width: 25%;
+  display: inline-block;
+  box-sizing: border-box;
+  padding: 10px;
+  text-align: center;
+}
+
+.book img {
+  width: 400px;
+  height: 350px;
+  object-fit: cover;
+}
+
+  
+.book:hover {
+  transform: scale(1.05);
+}
+   
+.book p {
+  margin-top: 10px;
+  font-weight: bold;
+}
+  
